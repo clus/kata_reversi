@@ -11,4 +11,9 @@ public class Player {
 		this.couleur = couleur;
 	}
 
+	public boolean turnToMove() {
+
+		return false;
+	}
+
 }
