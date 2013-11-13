@@ -1,62 +1,112 @@
 
 public class Reversi {
 	
-	private Reversi reversi = new Reversi();
-	private Player blackPlayer = new Player();
-	private Player whitePlayer = new Player();
-	
-	public String[] afficherInitialGrid(){
-		String[] initialGrid= {
-				"........",
-				"........",
-				"........",
-				"...BW...",
-				"...WB...",
-				"........",
-				"........",
-				"........"};		
-		return initialGrid;
-	}
-	
-	public String afficherGridForTurnToBlack(){
-		String gridForTurnToBlack= 
-				"........\n" +
-				"........\n" +
-				"....0...\n" +
-				"...BW0..\n" +
-				"..0WB...\n" +
-				"...0....\n" +
-				"........\n" +
-				"........\n" ;	
-		return gridForTurnToBlack;
-	}
-
-
-	public String afficherLegalMoves(String input) {
-		return afficherGridForTurnToBlack() ;
-		
-	}
-	
-	public String chooseMove() {
-		if(blackPlayer.turnToMove()) {
-			
-		}
-			
-	}
-
-	public String afficherResultMove(String input) {
-		return chooseMove();
-	}
-	
-
-	
-	
-	
+	private String[][] initialGrille = new String [8][8] ;
 	
 	public Reversi(){
-		reversi.afficherInitialGrid();
-		blackPlayer.setCouleur("B");
-		whitePlayer.setCouleur("W");
-					
+		for(int i=0;i<8;i++)
+			for(int j=0;j<8;j++)
+				initialGrille[i][j]=".";
+		
+		initialGrille[3][3] = "B" ;
+		initialGrille[3][4] = "W" ;
+		initialGrille[4][3] = "W" ;
+		initialGrille[4][4] = "B" ;
+
 	}
+	
+	public String[][] printLegalMovesWhite(String[][] input) {
+		
+		String ouput[][] = initialGrille;
+		
+		for(int i=0;i<8;i++)
+			for(int j=0;j<8;j++)
+				if(initialGrille[i][j]=="W"){
+					
+					if(initialGrille[i-1][j-1]=="B" 	&& initialGrille[i-2][j-2]==".")    initialGrille[i-2][j-2]="O";
+					if(initialGrille[i-1][j]=="B" 		&& initialGrille[i-2][j]==".")		initialGrille[i-2][j]="O";
+					if(initialGrille[i-1][j+1]=="B"		&& initialGrille[i-2][j+2]==".")	initialGrille[i-2][j+2]="O";
+					if(initialGrille[i][j-1]=="B" 		&& initialGrille[i][j-2]==".")		initialGrille[i][j-2]="O";
+					if(initialGrille[i][j+1]=="B" 		&& initialGrille[i][j+2]==".")		initialGrille[i][j+2]="O";
+					if(initialGrille[i+1][j-1]=="B"		&& initialGrille[i+2][j-2]==".")	initialGrille[i+2][j-2]="O";
+					if(initialGrille[i+1][j]=="B"		&& initialGrille[i+2][j]==".")		initialGrille[i+2][j]="O";
+					if(initialGrille[i+1][j+1]=="B" 	&& initialGrille[i][j+2]==".")		initialGrille[i][j+2]="O";
+																
+					}
+		return ouput;
+	
+}
+	
+		public String[][] printLegalMovesBlack(String[][] input) {
+			
+			String ouput[][] = initialGrille;
+			
+			for(int i=0;i<8;i++)
+				for(int j=0;j<8;j++)
+					if(initialGrille[i][j]=="B"){
+						
+						if(initialGrille[i-1][j-1]=="W" 	&& initialGrille[i-2][j-2]==".")    initialGrille[i-2][j-2]="O";
+						if(initialGrille[i-1][j]=="W" 		&& initialGrille[i-2][j]==".")		initialGrille[i-2][j]="O";
+						if(initialGrille[i-1][j+1]=="W"		&& initialGrille[i-2][j+2]==".")	initialGrille[i-2][j+2]="O";
+						if(initialGrille[i][j-1]=="W" 		&& initialGrille[i][j-2]==".")		initialGrille[i][j-2]="O";
+						if(initialGrille[i][j+1]=="W" 		&& initialGrille[i][j+2]==".")		initialGrille[i][j+2]="O";
+						if(initialGrille[i+1][j-1]=="W"		&& initialGrille[i+2][j-2]==".")	initialGrille[i+2][j-2]="O";
+						if(initialGrille[i+1][j]=="W"		&& initialGrille[i+2][j]==".")		initialGrille[i+2][j]="O";
+						if(initialGrille[i+1][j+1]=="W" 	&& initialGrille[i][j+2]==".")		initialGrille[i][j+2]="O";
+																	
+						}
+			return ouput;
+	}
+		
+		public String[][] choosenPositionByPlayerBlack(String[][] input) {
+			
+			
+			return input;
+			
+			
+		}
+
+		public String[][] printMoveForPlayerBlack(String[][] input) {
+		
+			String ouput[][] = initialGrille;
+			
+			for(int i=0;i<8;i++)
+				for(int j=0;j<8;j++)
+					if(initialGrille[i][j]=="W"){
+						
+						if(initialGrille[i-1][j]=="B" 	&& initialGrille[i+1][j]=="B" )	   	initialGrille[i][j]="B";
+						if(initialGrille[i][j-1]=="B" 	&& initialGrille[i][j+1]=="B" )	   	initialGrille[i][j]="B";
+						if(initialGrille[i-1][j-1]=="B" && initialGrille[i+1][j+1]=="B" )	initialGrille[i][j]="B";
+						if(initialGrille[i-1][j+1]=="B" && initialGrille[i+1][j-1]=="B" )	initialGrille[i][j]="B";
+														
+						}
+			return ouput;
+		}
+		
+		
+		
+//		public boolean isTheTurnForBlack(){
+//		if(initialGrille[8][0] == "B") 
+//			return true;
+//		else return false;
+//	}
+//	
+//	public boolean isTheTurnForWhite(){
+//		if(initialGrille[8][0] == "W") 
+//			return true;
+//		else return false;
+//	}
+//	
+//	public void choosePosition() {
+//
+//		for(int i=0;i<8;i++)
+//			for(int j=0;j<8;j++)
+//				if(initialGrille[i][j]=="O"){
+//					if(isTheTurnForBlack()==true) 
+//						
+//				}
+//		
+//	}
+	
+
 }
