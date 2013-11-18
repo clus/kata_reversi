@@ -33,7 +33,7 @@ public class ReversiTest {
 				{".",".",".",".",".",".",".","."},
 				{".",".",".",".",".",".",".","."}};
 		
-		assertArrayEquals(output, p2.printLegalMoves(input));
+		assertArrayEquals(output, p2.printLegalMoves(input,"B"));
 				
 	}
 	
@@ -62,7 +62,7 @@ public class ReversiTest {
 				{".",".",".",".",".",".",".","."}};
 		
 		
-		assertArrayEquals(output, p1.printLegalMoves(input));
+		assertArrayEquals(output, p1.printLegalMoves(input,"W"));
 				
 	}
 
@@ -95,6 +95,33 @@ public class ReversiTest {
 				
 	}
 	
-
+	@Test
+	public void printMoveForPlayerWhite() {
+		String[][] input= 
+			{
+				{".",".",".",".",".",".",".","."},
+				{".",".",".",".",".",".",".","."},
+				{".",".",".",".",".",".",".","."},
+				{".",".",".","B","W",".",".","."},
+				{".",".",".","W","B","W",".","."},
+				{".",".",".",".",".",".",".","."},
+				{".",".",".",".",".",".",".","."},
+				{".",".",".",".",".",".",".","."}};
+		
+		String[][]output = 
+			{
+				{".",".",".",".",".",".",".","."},
+				{".",".",".",".",".",".",".","."},
+				{".",".",".",".",".",".",".","."},
+				{".",".",".","B","W",".",".","."},
+				{".",".",".","W","W","W",".","."},
+				{".",".",".",".",".",".",".","."},
+				{".",".",".",".",".",".",".","."},
+				{".",".",".",".",".",".",".","."}};
+		
+		assertArrayEquals(output, p1.printMoveForPlayerWhite(input));
+				
+	}
+	
 
 }

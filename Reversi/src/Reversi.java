@@ -17,43 +17,30 @@ public class Reversi {
 
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public String[][] printLegalMoves(String[][] input, String player){
 
-	//		public boolean isTheTurnForBlack(){
-	//		if(initialGrille[8][0] == "B") 
-	//			return true;
-	//		else return false;
-	//	}
-	//	
-	//	public boolean isTheTurnForWhite(){
-	//		if(initialGrille[8][0] == "W") 
-	//			return true;
-	//		else return false;
-	//	}
-	//	
-	//	public void choosePosition() {
-	//
-	//		for(int i=0;i<8;i++)
-	//			for(int j=0;j<8;j++)
-	//				if(initialGrille[i][j]=="O"){
-	//					if(isTheTurnForBlack()==true) 
-	//						
-	//				}
-	//		
-	//	}
+		String ouput[][] = initialGrille;
+		String parametre ;
 
+		for(int i=0;i<8;i++)
+			for(int j=0;j<8;j++)
+				if(initialGrille[i][j]==player){
+					if(player == "B")
+						parametre = "W" ;
+					else parametre = "B" ;
+						
+					if(initialGrille[i-1][j-1]==parametre 		&& initialGrille[i-2][j-2]==".")    initialGrille[i-2][j-2]="O";
+					if(initialGrille[i-1][j+1]==parametre		&& initialGrille[i-2][j+2]==".")	initialGrille[i-2][j+2]="O";
+					if(initialGrille[i-1][j]==parametre 		&& initialGrille[i-2][j]==".")		initialGrille[i-2][j]="O";
+					if(initialGrille[i][j-1]==parametre 		&& initialGrille[i][j-2]==".")		initialGrille[i][j-2]="O";
+					if(initialGrille[i][j+1]==parametre 		&& initialGrille[i][j+2]==".")		initialGrille[i][j+2]="O";
+					if(initialGrille[i+1][j-1]==parametre		&& initialGrille[i+2][j-2]==".")	initialGrille[i+2][j-2]="O";
+					if(initialGrille[i+1][j]==parametre			&& initialGrille[i+2][j]==".")		initialGrille[i+2][j]="O";
+					if(initialGrille[i+1][j+1]==parametre 		&& initialGrille[i][j+2]==".")		initialGrille[i][j+2]="O";
+					
+				}
+		return ouput;
+
+	}
 
 }
