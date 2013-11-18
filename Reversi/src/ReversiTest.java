@@ -6,8 +6,7 @@ import org.junit.Test;
 
 public class ReversiTest {
 	
-	WhitePlayer p1 = new WhitePlayer() ;
-	BlackPlayer p2 = new BlackPlayer() ;
+	Reversi reversi = new Reversi();
 	
 	@Test
 	public void legalMovesForPlayerBlack() {
@@ -33,7 +32,7 @@ public class ReversiTest {
 				{".",".",".",".",".",".",".","."},
 				{".",".",".",".",".",".",".","."}};
 		
-		assertArrayEquals(output, p2.printLegalMoves(input,"B"));
+		assertArrayEquals(output, reversi.printLegalMoves(input,"B"));
 				
 	}
 	
@@ -62,7 +61,7 @@ public class ReversiTest {
 				{".",".",".",".",".",".",".","."}};
 		
 		
-		assertArrayEquals(output, p1.printLegalMoves(input,"W"));
+		assertArrayEquals(output, reversi.printLegalMoves(input,"W"));
 				
 	}
 
@@ -91,7 +90,7 @@ public class ReversiTest {
 				{".",".",".",".",".",".",".","."},
 				{".",".",".",".",".",".",".","."}};
 		
-		assertArrayEquals(output, p2.printMoveForPlayer(input,"W"));
+		assertArrayEquals(output, reversi.printMoveForPlayer(input,"W"));
 				
 	}
 	
@@ -119,7 +118,7 @@ public class ReversiTest {
 				{".",".",".",".",".",".",".","."},
 				{".",".",".",".",".",".",".","."}};
 		
-		assertArrayEquals(output, p1.printMoveForPlayer(input,"B"));
+		assertArrayEquals(output, reversi.printMoveForPlayer(input,"B"));
 				
 	}
 	

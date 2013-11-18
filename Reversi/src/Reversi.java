@@ -29,14 +29,14 @@ public class Reversi {
 						parametre = "W" ;
 					else parametre = "B" ;
 
-					if(initialGrille[i-1][j-1]==parametre 		&& initialGrille[i-2][j-2]==".")    initialGrille[i-2][j-2]="O";
-					if(initialGrille[i-1][j+1]==parametre		&& initialGrille[i-2][j+2]==".")	initialGrille[i-2][j+2]="O";
-					if(initialGrille[i-1][j]==parametre 		&& initialGrille[i-2][j]==".")		initialGrille[i-2][j]="O";
-					if(initialGrille[i][j-1]==parametre 		&& initialGrille[i][j-2]==".")		initialGrille[i][j-2]="O";
-					if(initialGrille[i][j+1]==parametre 		&& initialGrille[i][j+2]==".")		initialGrille[i][j+2]="O";
-					if(initialGrille[i+1][j-1]==parametre		&& initialGrille[i+2][j-2]==".")	initialGrille[i+2][j-2]="O";
-					if(initialGrille[i+1][j]==parametre			&& initialGrille[i+2][j]==".")		initialGrille[i+2][j]="O";
-					if(initialGrille[i+1][j+1]==parametre 		&& initialGrille[i][j+2]==".")		initialGrille[i][j+2]="O";
+					if(initialGrille[i-1][j-1]==parametre 	&& initialGrille[i-2][j-2]==".")    initialGrille[i-2][j-2]="O";
+					if(initialGrille[i-1][j+1]==parametre	&& initialGrille[i-2][j+2]==".")	initialGrille[i-2][j+2]="O";
+					if(initialGrille[i-1][j]==parametre 	&& initialGrille[i-2][j]==".")		initialGrille[i-2][j]="O";
+					if(initialGrille[i][j-1]==parametre 	&& initialGrille[i][j-2]==".")		initialGrille[i][j-2]="O";
+					if(initialGrille[i][j+1]==parametre 	&& initialGrille[i][j+2]==".")		initialGrille[i][j+2]="O";
+					if(initialGrille[i+1][j-1]==parametre	&& initialGrille[i+2][j-2]==".")	initialGrille[i+2][j-2]="O";
+					if(initialGrille[i+1][j]==parametre		&& initialGrille[i+2][j]==".")		initialGrille[i+2][j]="O";
+					if(initialGrille[i+1][j+1]==parametre 	&& initialGrille[i][j+2]==".")		initialGrille[i][j+2]="O";
 
 				}
 		return ouput;
@@ -59,8 +59,8 @@ public class Reversi {
 
 					if(output[i-1][j]==parametre 	&& output[i+1][j]==parametre )	   	output[i][j]=parametre;
 					if(output[i][j-1]==parametre 	&& output[i][j+1]==parametre )	   	output[i][j]=parametre;
-					if(output[i-1][j-1]==parametre && output[i+1][j+1]==parametre )	output[i][j]=parametre;
-					if(output[i-1][j+1]==parametre && output[i+1][j-1]==parametre )	output[i][j]=parametre;
+					if(output[i-1][j-1]==parametre	&& output[i+1][j+1]==parametre )	output[i][j]=parametre;
+					if(output[i-1][j+1]==parametre 	&& output[i+1][j-1]==parametre )	output[i][j]=parametre;
 
 				}
 		return output;
