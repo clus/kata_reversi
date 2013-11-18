@@ -91,7 +91,7 @@ public class ReversiTest {
 				{".",".",".",".",".",".",".","."},
 				{".",".",".",".",".",".",".","."}};
 		
-		assertArrayEquals(output, p2.printMoveForPlayerBlack(input));
+		assertArrayEquals(output, p2.printMoveForPlayer(input,"W"));
 				
 	}
 	
@@ -119,7 +119,7 @@ public class ReversiTest {
 				{".",".",".",".",".",".",".","."},
 				{".",".",".",".",".",".",".","."}};
 		
-		assertArrayEquals(output, p1.printMoveForPlayerWhite(input));
+		assertArrayEquals(output, p1.printMoveForPlayer(input,"B"));
 				
 	}
 	
