@@ -1,10 +1,14 @@
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 
 public class ReversiTest {
-
+	
+	WhitePlayer p1 = new WhitePlayer() ;
+	BlackPlayer p2 = new BlackPlayer() ;
+	
 	@Test
 	public void legalMovesForPlayerBlack() {
 		String[][] input= 
@@ -29,37 +33,7 @@ public class ReversiTest {
 				{".",".",".",".",".",".",".","."},
 				{".",".",".",".",".",".",".","."}};
 		
-		Reversi reversi = new Reversi();
-		assertArrayEquals(output, reversi.printLegalMovesBlack(input));
-				
-	}
-	
-	@Test
-	public void printMoveForPlayerBlack() {
-		String[][] input= 
-			{
-				{".",".",".",".",".",".",".","."},
-				{".",".",".",".",".",".",".","."},
-				{".",".",".",".",".",".",".","."},
-				{".",".",".","B","W",".",".","."},
-				{".",".",".","W","B",".",".","."},
-				{".",".",".","B",".",".",".","."},
-				{".",".",".",".",".",".",".","."},
-				{".",".",".",".",".",".",".","."}};
-		
-		String[][]output = 
-			{
-				{".",".",".",".",".",".",".","."},
-				{".",".",".",".",".",".",".","."},
-				{".",".",".",".",".",".",".","."},
-				{".",".",".","B","W",".",".","."},
-				{".",".",".","B","B",".",".","."},
-				{".",".",".","B",".",".",".","."},
-				{".",".",".",".",".",".",".","."},
-				{".",".",".",".",".",".",".","."}};
-		
-		Reversi reversi = new Reversi();
-		assertArrayEquals(output, reversi.printMoveForPlayerBlack(input));
+		assertArrayEquals(output, p2.printLegalMoves(input));
 				
 	}
 	
@@ -87,10 +61,40 @@ public class ReversiTest {
 				{".",".",".",".",".",".",".","."},
 				{".",".",".",".",".",".",".","."}};
 		
-		Reversi reversi = new Reversi();
-		assertArrayEquals(output, reversi.printLegalMovesWhite(input));
+		
+		assertArrayEquals(output, p1.printLegalMoves(input));
 				
 	}
+
+	
+//	@Test
+//	public void printMoveForPlayerBlack() {
+//		String[][] input= 
+//			{
+//				{".",".",".",".",".",".",".","."},
+//				{".",".",".",".",".",".",".","."},
+//				{".",".",".",".",".",".",".","."},
+//				{".",".",".","B","W",".",".","."},
+//				{".",".",".","W","B",".",".","."},
+//				{".",".",".","B",".",".",".","."},
+//				{".",".",".",".",".",".",".","."},
+//				{".",".",".",".",".",".",".","."}};
+//		
+//		String[][]output = 
+//			{
+//				{".",".",".",".",".",".",".","."},
+//				{".",".",".",".",".",".",".","."},
+//				{".",".",".",".",".",".",".","."},
+//				{".",".",".","B","W",".",".","."},
+//				{".",".",".","B","B",".",".","."},
+//				{".",".",".","B",".",".",".","."},
+//				{".",".",".",".",".",".",".","."},
+//				{".",".",".",".",".",".",".","."}};
+//		
+//		assertArrayEquals(output, p2.printMoveForPlayerBlack(input));
+//				
+//	}
+	
 
 
 }
