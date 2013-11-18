@@ -32,7 +32,7 @@ public class ReversiTest {
 				{".",".",".",".",".",".",".","."},
 				{".",".",".",".",".",".",".","."}};
 		
-		assertArrayEquals(output, reversi.printLegalMoves(input,"B"));
+		assertArrayEquals(output, reversi.printLegalFirstMoves(input,"B"));
 				
 	}
 	
@@ -61,7 +61,7 @@ public class ReversiTest {
 				{".",".",".",".",".",".",".","."}};
 		
 		
-		assertArrayEquals(output, reversi.printLegalMoves(input,"W"));
+		assertArrayEquals(output, reversi.printLegalFirstMoves(input,"W"));
 				
 	}
 

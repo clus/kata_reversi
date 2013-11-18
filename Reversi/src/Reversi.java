@@ -17,7 +17,7 @@ public class Reversi {
 
 	}
 
-	public String[][] printLegalMoves(String[][] input, String player){
+	public String[][] printLegalFirstMoves(String[][] input, String player){
 
 		String ouput[][] = initialGrille;
 		String parametre ;
